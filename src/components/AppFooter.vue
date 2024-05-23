@@ -3,10 +3,12 @@
 
 <template>
     <div class="myComicBkg">
-        <div class="container py-5">
-            <div class="row justify-content-between flex-nowrap">
-                <div class="col-6 g-3">
-                    <div class="d-flex flex-column myMenu flex-wrap">
+
+        <div class="container h-100">
+
+            <div class="row justify-content-between flex-nowrap align-items-center h-100">
+                <div class="col-5 myMenu ">
+                    <div class="d-flex flex-column h-100 flex-wrap">
                         <div>
                             <h4>
                                 DC COMICS
@@ -24,7 +26,7 @@
 
                         <div>
                             <h4>
-                                DC COMICS
+                                SHOP
                             </h4>
                             <ul>
                                 <li>ciao</li>
@@ -34,7 +36,7 @@
 
                         <div>
                             <h4>
-                                DC COMICS
+                                DC
                             </h4>
                             <ul>
                                 <li>ciao</li>
@@ -53,7 +55,7 @@
 
                         <div>
                             <h4>
-                                DC COMICS
+                                SITES
                             </h4>
                             <ul>
                                 <li>ciao</li>
@@ -66,19 +68,23 @@
                     </div>
                 </div>
 
-                    <div class="d-flex py-5">
-                        <img src="../assets/vue-dc-comics-1/img/dc-logo-bg.png" alt="dc-bkg">
+                <div class="col dc-bkg">
+                    <div class="d-flex h-100 justify-content-end">
+                        <img src="../assets/vue-dc-comics-1/img/dc-logo-bg.png" class="h-100">
                     </div>
+                </div>
 
             </div>
+
         </div>
+
     </div>
 
     <div class="myFooterBkg">
         <div class="container">
             <div class="row py-3 justify-content-between">
                 <button type="button" class="btn btn-outline-primary col-2">SIGN-UP NOW!</button>
-    
+
                 <div class="col-5">
                     <div class="d-flex h-100 align-items-center flex-nowrap myHeaderItem">
                         <div class="flex-fill">FOLLOW US</div>
@@ -96,24 +102,26 @@
 </template>
 
 <style scoped>
-*{
-    color:white;
+* {
+    color: white;
 }
 .myComicBkg {
     background-image: url("../assets/vue-dc-comics-1/img/footer-bg.jpg");
-    height:30rem;
+    height: 25rem;
+    position:relative;
+    z-index:-1;
 }
 .myFooterBkg {
     background-color: #222;
 }
+
 .myMenu {
-    height: 21rem;
+    height: 90%;
 }
 
-[alt="dc-bkg"] {
-    height: 30rem;
-    padding-right: .5rem;
-    margin: -5rem 0 -5rem 0;
+
+.dc-bkg{
+    height: 130%; 
 }
 
 .myWhite {
@@ -126,6 +134,7 @@ li {
 }
 
 ul {
-    padding: 0;
+  list-style: none;
+  padding:0;
 }
 </style>
