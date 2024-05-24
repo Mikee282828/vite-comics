@@ -114,12 +114,9 @@
 .myFooterBkg {
     background-color: #222;
 }
-
 .myMenu {
     height: 90%;
 }
-
-
 .dc-bkg{
     height: 130%; 
 }

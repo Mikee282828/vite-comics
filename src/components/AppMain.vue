@@ -1,4 +1,43 @@
 <script>
+export default{
+    data(){
+        return{
+            sections:[
+            {
+                name: "digital",
+                url: "buy-comics-digital-comics.png",
+                body: "DIGITAL"
+            },
+            {
+                name: "merchandise",
+                url: "buy-comics-merchandise.png",
+                body: "MERCHANDISE"
+            },
+            {
+                name: "subscriptions",
+                url: "buy-comics-subscriptions.png",
+                body: "SUBSCRIPTIONS"
+            },
+            {
+                name: "locator",
+                url: "buy-comics-shop-locator.png",
+                body: "LOCATOR"
+            },
+            {
+                name: "visa",
+                url: "buy-dc-power-visa.svg",
+                body: "VISA"
+            },
+            ]
+        }
+    },
+    methods: {
+        getImage(path){
+            let risultato = new URL("../assets/vue-dc-comics-1/img/"+path, import.meta.url);
+            return risultato.href
+        }
+    }
+}
 </script>
 
 <template>
@@ -12,25 +51,9 @@
     <div class="myAzzureBkg">
         <div class="container">
             <div class="row myWhite py-5 px-3 justify-content-center">
-                <div class="col align-self-center">
-                    <img src="../assets/vue-dc-comics-1/img/buy-comics-digital-comics.png" alt="digital">
-                    DIGITAL
-                </div>
-                <div class="col align-self-center">
-                    <img src="../assets/vue-dc-comics-1/img/buy-comics-merchandise.png" alt="merchandise">
-                    MERCHANDISE
-                </div>
-                <div class="col align-self-center">
-                    <img src="../assets/vue-dc-comics-1/img/buy-comics-subscriptions.png" alt="subscriptions">
-                    SUBSCRIPTIONS
-                </div>
-                <div class="col align-self-center">
-                    <img src="../assets/vue-dc-comics-1/img/buy-comics-shop-locator.png" alt="locator">
-                    LOCATOR
-                </div>
-                <div class="col align-self-center">
-                    <img src="../assets/vue-dc-comics-1/img/buy-dc-power-visa.svg" alt="visa">
-                    VISA
+                <div class="col align-self-center" v-for="buy in sections">
+                    <img :src="getImage(buy.url)" :alt="buy.name">
+                    {{buy.body}}
                 </div>
             </div>
         </div>
