@@ -1,39 +1,43 @@
 <script>
-export default{
-    data(){
-        return{
-            sections:[
-            {
-                name: "digital",
-                url: "buy-comics-digital-comics.png",
-                body: "DIGITAL"
-            },
-            {
-                name: "merchandise",
-                url: "buy-comics-merchandise.png",
-                body: "MERCHANDISE"
-            },
-            {
-                name: "subscriptions",
-                url: "buy-comics-subscriptions.png",
-                body: "SUBSCRIPTIONS"
-            },
-            {
-                name: "locator",
-                url: "buy-comics-shop-locator.png",
-                body: "LOCATOR"
-            },
-            {
-                name: "visa",
-                url: "buy-dc-power-visa.svg",
-                body: "VISA"
-            },
-            ]
+import ComicsList from "./ComicsList.vue";
+export default {
+    components:{
+        ComicsList
+    },
+    data() {
+        return {
+            sections: [
+                {
+                    name: "digital",
+                    url: "buy-comics-digital-comics.png",
+                    body: "DIGITAL"
+                },
+                {
+                    name: "merchandise",
+                    url: "buy-comics-merchandise.png",
+                    body: "MERCHANDISE"
+                },
+                {
+                    name: "subscriptions",
+                    url: "buy-comics-subscriptions.png",
+                    body: "SUBSCRIPTIONS"
+                },
+                {
+                    name: "locator",
+                    url: "buy-comics-shop-locator.png",
+                    body: "LOCATOR"
+                },
+                {
+                    name: "visa",
+                    url: "buy-dc-power-visa.svg",
+                    body: "VISA"
+                },
+            ],
         }
     },
     methods: {
-        getImage(path){
-            let risultato = new URL("../assets/vue-dc-comics-1/img/"+path, import.meta.url);
+        getImage(path) {
+            let risultato = new URL(`../assets/vue-dc-comics-1/img/${path}`, import.meta.url);
             return risultato.href
         }
     }
@@ -43,8 +47,7 @@ export default{
 <template>
     <div class="myBlackBkg">
         <div class="container">
-            <h4 class="py-5 m-0">
-                --> Content goes here <-- </h4>
+            <ComicsList></ComicsList>
         </div>
     </div>
 
@@ -53,7 +56,7 @@ export default{
             <div class="row myWhite py-5 px-3 justify-content-center">
                 <div class="col align-self-center" v-for="buy in sections">
                     <img :src="getImage(buy.url)" :alt="buy.name">
-                    {{buy.body}}
+                    {{ buy.body }}
                 </div>
             </div>
         </div>
@@ -75,13 +78,15 @@ h4 {
 }
 
 [alt] {
-    height:2.5rem;
-    padding-right:.5rem;
+    height: 2.5rem;
+    padding-right: .5rem;
 }
-.myWhite{
-    color:white;
+
+.myWhite {
+    color: white;
 }
-.col{
-    font-size:.8rem;
+
+.col {
+    font-size: .8rem;
 }
 </style>

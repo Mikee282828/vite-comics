@@ -91,8 +91,8 @@
                         <div class="flex-fill"></div>
                         <div class="flex-fill"></div>
                         <div class="flex-fill"></div>
-                        <div class="flex-fill">GAMES</div>
-                        <div class="flex-fill">COLLECTIBLES</div>
+                        <div class="flex-fill"></div>
+                        <div class="flex-fill"></div>
                     </div>
                 </div>
             </div>
